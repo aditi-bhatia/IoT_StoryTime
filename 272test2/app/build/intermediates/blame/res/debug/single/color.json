@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/design_error.xml",
+        "source": "/Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/res/color/design_error.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
+        "source": "/Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/res/color/design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color/abc_btn_colored_borderless_text_material.xml"
+    }
+]
