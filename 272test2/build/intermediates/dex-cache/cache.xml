@@ -12,11 +12,29 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0148d604c3f41c6a79cfdf255bd1b090a298b75d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6d6ff0b333c107051b793d6c98f5190b489f704d">
+        <dex dex="/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_191bc80b54b37dae600e1e99302d26274c598f8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/aditi/Documents/android/272test2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="771a3387ce334cec364088a884b5abd5d9435187">
+        sha1="dc0c9b0ee1a1bfdec443e97c06f24ada2a256abc">
         <dex dex="/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_09a99a10bbf078ed1083a2340722e9ad7a3d477c/classes.dex" />
     </item>
 

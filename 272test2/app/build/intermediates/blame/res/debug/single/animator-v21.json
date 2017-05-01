@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml",
+        "source": "/Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/res/animator-v21/design_appbar_state_list_animator.xml"
+    },
+    {
         "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/animator-v21/design_appbar_state_list_animator.xml",
         "source": "/Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/res/animator-v21/design_appbar_state_list_animator.xml"
     }

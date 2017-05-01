@@ -2,5 +2,9 @@
     {
         "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     }
 ]

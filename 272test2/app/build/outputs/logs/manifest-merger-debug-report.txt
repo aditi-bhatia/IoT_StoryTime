@@ -13,19 +13,24 @@ ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.
 	android:versionCode
 		INJECTED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:5:5-66
+	android:name
+		ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:5:22-64
 application
 ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:7:5-26:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/aditi/.android/build-cache/296946ebd7b2852c34c5d02571657da3f913b819/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] /Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/01c8f312ffed299a4346c9d235f4455b86d25d19/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/1170bf4d87ef7f3609b2cb32750e786287d175b6/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:25.3.1] /Users/aditi/.android/build-cache/e14e373fa09ec181e191287c5612bea56b4da887/output/AndroidManifest.xml:26:5-20
+MERGED from [com.ibm.watson.developer_cloud:android-sdk:0.2.3] /Users/aditi/.android/build-cache/0f31f045d8999b7ce3bed33398ecff514ba618e9/output/AndroidManifest.xml:11:5-12:19
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /Users/aditi/.android/build-cache/8b130211b2555e7fd3ea686beecab473c0b0fdec/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/aditi/.android/build-cache/36815d6ef8becc087aa39454260d2e452cbfaf76/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.1] /Users/aditi/.android/build-cache/bd2fa8e9af47e90c3e52e4c54111cc158c623968/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:25.3.1] /Users/aditi/.android/build-cache/b67ef8390ba10e1d94094c47eaa5ea18aaec7e8e/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/aditi/.android/build-cache/13d1b0da3d7d739d8f9d3631a2a91b54d7a4e6a1/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/01c8f312ffed299a4346c9d235f4455b86d25d19/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/1170bf4d87ef7f3609b2cb32750e786287d175b6/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:25.3.1] /Users/aditi/.android/build-cache/4217e478235a5ca9f7a534f37a75d171d9ca7f2b/output/AndroidManifest.xml:29:5-20
 	android:label
 		ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:10:9-41
@@ -39,10 +44,6 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/aditi/.android/bu
 		ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:9:9-43
 	android:theme
 		ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:13:9-40
-uses-permission#android.permission.INTERNET
-ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:14:9-70
-	android:name
-		ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:14:26-68
 activity#com.example.aditi.a272test2.MainActivity
 ADDED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml:16:9-25:20
 	android:label
@@ -65,16 +66,17 @@ uses-sdk
 INJECTED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/aditi/.android/build-cache/296946ebd7b2852c34c5d02571657da3f913b819/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:25.3.1] /Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/01c8f312ffed299a4346c9d235f4455b86d25d19/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/1170bf4d87ef7f3609b2cb32750e786287d175b6/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/aditi/.android/build-cache/a6f04d744e5f96da872f3a3d668fd46eaa5949b3/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.3.1] /Users/aditi/.android/build-cache/e14e373fa09ec181e191287c5612bea56b4da887/output/AndroidManifest.xml:20:5-44
+MERGED from [com.ibm.watson.developer_cloud:android-sdk:0.2.3] /Users/aditi/.android/build-cache/0f31f045d8999b7ce3bed33398ecff514ba618e9/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] /Users/aditi/.android/build-cache/8b130211b2555e7fd3ea686beecab473c0b0fdec/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/aditi/.android/build-cache/36815d6ef8becc087aa39454260d2e452cbfaf76/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.1] /Users/aditi/.android/build-cache/bd2fa8e9af47e90c3e52e4c54111cc158c623968/output/AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.3.1] /Users/aditi/.android/build-cache/b67ef8390ba10e1d94094c47eaa5ea18aaec7e8e/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/aditi/.android/build-cache/13d1b0da3d7d739d8f9d3631a2a91b54d7a4e6a1/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/01c8f312ffed299a4346c9d235f4455b86d25d19/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/1170bf4d87ef7f3609b2cb32750e786287d175b6/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.1] /Users/aditi/.android/build-cache/4217e478235a5ca9f7a534f37a75d171d9ca7f2b/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] /Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/AndroidManifest.xml:23:9-59
@@ -86,16 +88,16 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/aditi/.android/bu
 		INJECTED from /Users/aditi/Documents/android/272test2/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] /Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/01c8f312ffed299a4346c9d235f4455b86d25d19/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/1170bf4d87ef7f3609b2cb32750e786287d175b6/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/aditi/.android/build-cache/a6f04d744e5f96da872f3a3d668fd46eaa5949b3/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:transition:25.3.1] /Users/aditi/.android/build-cache/e14e373fa09ec181e191287c5612bea56b4da887/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-v4:25.3.1] /Users/aditi/.android/build-cache/8b130211b2555e7fd3ea686beecab473c0b0fdec/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/aditi/.android/build-cache/36815d6ef8becc087aa39454260d2e452cbfaf76/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.1] /Users/aditi/.android/build-cache/bd2fa8e9af47e90c3e52e4c54111cc158c623968/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-ui:25.3.1] /Users/aditi/.android/build-cache/b67ef8390ba10e1d94094c47eaa5ea18aaec7e8e/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-core-utils:25.3.1] /Users/aditi/.android/build-cache/13d1b0da3d7d739d8f9d3631a2a91b54d7a4e6a1/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/01c8f312ffed299a4346c9d235f4455b86d25d19/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/aditi/.android/build-cache/1170bf4d87ef7f3609b2cb32750e786287d175b6/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.1] /Users/aditi/.android/build-cache/4217e478235a5ca9f7a534f37a75d171d9ca7f2b/output/AndroidManifest.xml:25:5-27:34
 	android:value
 		ADDED from [com.android.support:design:25.3.1] /Users/aditi/.android/build-cache/c39d1dd8b912802c754cf8102a0acccf824e6107/output/AndroidManifest.xml:27:9-31
