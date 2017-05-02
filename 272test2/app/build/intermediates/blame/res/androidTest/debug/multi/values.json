@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/aditi/Documents/android/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "/home/akinfemi/SJSU/app/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,31 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/aditi/.android/build-cache/dc1ed3becd51f35d62c00be3199d3012f11e0528/output/res/values/values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 229,
-                        "endColumn": 45,
-                        "endOffset": 270
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 45,
-                    "endOffset": 96
-                },
-                "from": {
-                    "file": "/Users/aditi/.android/build-cache/dc1ed3becd51f35d62c00be3199d3012f11e0528/output/res/values/values.xml",
+                    "file": "/home/akinfemi/.android/build-cache/eec873fd0a5eccbe93b61ce08d8c910a34d0edbb/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

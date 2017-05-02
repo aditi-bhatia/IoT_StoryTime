@@ -1,16 +1,15 @@
 package com.example.aditi.a272test2;
 
         import java.io.InputStream;
-        import java.net.HttpURLConnection;
         import java.net.URL;
         import java.util.ArrayList;
 
-        import android.graphics.Movie;
         import java.util.Locale;
+        import java.util.concurrent.ExecutionException;
+
         import android.app.Activity;
         import android.content.ActivityNotFoundException;
         import android.content.Intent;
-        import android.net.Uri;
         import android.os.AsyncTask;
         import android.os.Bundle;
         import android.speech.RecognizerIntent;
@@ -22,14 +21,14 @@ package com.example.aditi.a272test2;
         import android.widget.ImageButton;
         import android.widget.TextView;
         import android.widget.Toast;
-        import android.widget.VideoView;
 
         import javax.json.Json;
         import javax.json.JsonArray;
         import javax.json.JsonObject;
         import javax.json.JsonReader;
 
-        import static android.graphics.Movie.decodeStream;
+        import com.ibm.watson.developer_cloud.natural_language_understanding.v1.NaturalLanguageUnderstanding;
+        import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.*;
 
 public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
@@ -37,18 +36,59 @@ public class MainActivity extends Activity {
     private ImageButton btnMicrophone;
 
     private WebView back;
-  //  private Button btn;
+    private Button btn;
     private EditText tmpIn;
-    private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1";
+    private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
 
     /*
-        Download Task
-        Param1: Type of var to send to class DownloadTask
-        Parma2: Name of the method that shows progress
-        Params3: Return var type
+        Param1: Type of var to send to Task class
+        Param2: Name of the method that shows progress
+        Param3: Return var type
      */
-    public class DownloadTask extends AsyncTask<String, Void, String>{
+    private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
+        /*
+          "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+  "username": "9af3dd26-8450-48fb-8878-c1b697a7330e",
+  "password": "esyU4rPHDcMN"
+         */
+
+        protected String doInBackground(String... params) {
+            NaturalLanguageUnderstanding service = new NaturalLanguageUnderstanding(
+                    NaturalLanguageUnderstanding.VERSION_DATE_2017_02_27,
+                    "9af3dd26-8450-48fb-8878-c1b697a7330e",
+                    "esyU4rPHDcMN"
+            );
+            String toAnalyze = params[0];
+            KeywordsOptions keywords= new KeywordsOptions.Builder()
+                    .sentiment(true)
+                    .emotion(true)
+                    .limit(3)
+                    .build();
+
+            Features features = new Features.Builder()
+                    .keywords(keywords)
+                    .build();
+
+            AnalyzeOptions parameters = new AnalyzeOptions.Builder()
+                    .text(toAnalyze)
+                    .features(features)
+                    .build();
+
+            AnalysisResults response = service
+                    .analyze(parameters)
+                    .execute();
+            System.out.println(response);
+            return null;
+        }
+
+        protected void onPostExecute(String response) {
+            new DownloadTask().execute(api_path + query + "boy");
+            System.out.println("Done!");
+        }
+    }
+
+    private class DownloadTask extends AsyncTask<String, Void, String>{
 
         @Override
         protected String doInBackground(String... params){
@@ -63,13 +103,6 @@ public class MainActivity extends Activity {
                 JsonArray results = obj.getJsonArray("data");
                 JsonObject result = results.getValuesAs(JsonObject.class).get(0);
                 gif_url = result.getJsonObject("images").getJsonObject("original").getString("mp4");
-
-//                System.out.println(gif_url);
-//                url = new URL(gif_url);
-//                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//                connection.connect();
-//                InputStream ls = connection.getInputStream();
-//                gif = decodeStream(ls);
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -95,22 +128,25 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         txtOutput = (TextView) findViewById(R.id.txt_output);
         btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
-       /* btnMicrophone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startSpeechToText();
-            }
-        });*/
 
         back = (WebView) findViewById(R.id.bckgrnd);
-      //  btn = (Button) findViewById(R.id.tempButton);
+        btn = (Button) findViewById(R.id.tmpBtn);
         tmpIn = (EditText) findViewById(R.id.tempinput);
+
         btnMicrophone.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startSpeechToText();
+            }
+        });
 
-
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = tmpIn.getText().toString();
+                txtOutput.setText(text);
+                //if text contains "mother" replace with daughter
+                new WatsonUnderstandTask().execute(text);
             }
         });
     }
@@ -132,13 +168,6 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(),
                     "Sorry! Speech recognition is not supported on this device.",
                     Toast.LENGTH_SHORT).show();
-
-           /* String appPackageName = "com.google.android.googlequicksearchbox";
-           try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
-            } catch (android.content.ActivityNotFoundException anfe) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
-            }*/
         }
     }
 
@@ -154,14 +183,14 @@ public class MainActivity extends Activity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     String text = result.get(0);
-                   // txtOutput.setText(text);
-                    tmpIn.setText(text);
+                    txtOutput.setText(text);
+//                    tmpIn.setText(text);
 
-                    try {
-                        new DownloadTask().execute(api_path + query + tmpIn.getText());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        new DownloadTask().execute(api_path + query + tmpIn.getText());
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
                 }
                 break;
             }

@@ -48,19 +48,20 @@ android:orientation="vertical" >
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true">
 
-    <TextView
-    android:id="@+id/txt_output"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="100dp"
-    android:textColor="@color/white"
-    android:textSize="26sp"
-    android:textStyle="normal" />
-<LinearLayout
+        <ImageButton
+            android:id="@+id/btn_mic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/microphone"
+            android:visibility="invisible" />
+
+    </WebView>
+
+    <LinearLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
@@ -70,20 +71,19 @@ android:orientation="vertical" >
     android:orientation="vertical"
     android:id="@+id/linearLayout">
 
-    <ImageButton
-        android:id="@+id/btn_mic"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@null"
-        android:scaleType="centerCrop"
-        android:src="@drawable/microphone"
-         />
+        <Button
+            android:id="@+id/tmpBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_x="7dp"
+            android:layout_y="402dp"
+            android:text="Button" />
 
-   <!-- <Button
-        android:id="@+id/tempButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" /> -->
+        <!-- <Button
+             android:id="@+id/tempButton"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="Button" /> -->
 </LinearLayout>
 
     <EditText
@@ -94,5 +94,14 @@ android:orientation="vertical" >
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/txt_output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
 </RelativeLayout>

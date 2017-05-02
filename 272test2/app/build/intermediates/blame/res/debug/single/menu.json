@@ -1,10 +1,6 @@
 [
     {
-        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/aditi/Documents/android/272test2/app/src/main/res/menu/menu_main.xml"
-    },
-    {
-        "merged": "/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/Users/aditi/Documents/GitHub/IoT_StoryTime/272test2/app/src/main/res/menu/menu_main.xml"
+        "merged": "/home/akinfemi/SJSU/app/272test2/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/menu/menu_main.xml"
     }
 ]
