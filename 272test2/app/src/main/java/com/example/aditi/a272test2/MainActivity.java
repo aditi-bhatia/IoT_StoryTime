@@ -4,6 +4,7 @@ package com.example.aditi.a272test2;
         import java.net.URL;
         import java.util.ArrayList;
 
+        import java.util.List;
         import java.util.Locale;
         import java.util.concurrent.ExecutionException;
 
@@ -30,6 +31,10 @@ package com.example.aditi.a272test2;
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.NaturalLanguageUnderstanding;
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.*;
 
+        import org.json.JSONArray;
+        import org.json.JSONException;
+        import org.json.JSONObject;
+
 public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
     private TextView txtOutput;
@@ -47,11 +52,6 @@ public class MainActivity extends Activity {
         Param3: Return var type
      */
     private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
-        /*
-          "url": "https://gateway.watsonplatform.net/natural-language-understanding/api",
-  "username": "9af3dd26-8450-48fb-8878-c1b697a7330e",
-  "password": "esyU4rPHDcMN"
-         */
 
         protected String doInBackground(String... params) {
             NaturalLanguageUnderstanding service = new NaturalLanguageUnderstanding(
@@ -78,13 +78,20 @@ public class MainActivity extends Activity {
             AnalysisResults response = service
                     .analyze(parameters)
                     .execute();
-            System.out.println(response);
-            return null;
+            return response.getKeywords().toString();
         }
 
         protected void onPostExecute(String response) {
-            new DownloadTask().execute(api_path + query + "boy");
-            System.out.println("Done!");
+            try {
+                JSONArray arr = new JSONArray(response);
+                for (int i = arr.length() - 1; i >= 0; i--){
+                    JSONObject object = arr.getJSONObject(i);
+                    new DownloadTask().execute(api_path + query + object.getString("text"));
+//                    Thread.sleep(2000);
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 
