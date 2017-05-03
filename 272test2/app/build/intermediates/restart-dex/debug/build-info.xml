@@ -6,22 +6,22 @@
     density="420dpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1493798998881"
+    timestamp="1493833727072"
     token="-6100303932065609786"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="173" />
+        duration="183" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="29" />
+        duration="50" />
     <task
         name="verifier"
-        duration="4" />
+        duration="2" />
 
     <artifact
         location="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
@@ -29,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1493793207604"
+        timestamp="1493833541793"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
@@ -70,7 +70,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1493798998881"
+        timestamp="1493833727072"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"

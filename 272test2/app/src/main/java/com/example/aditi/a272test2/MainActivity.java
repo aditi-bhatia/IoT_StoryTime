@@ -82,6 +82,7 @@ public class MainActivity extends Activity {
         }
 
         protected void onPostExecute(String response) {
+            System.out.println(response);
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
