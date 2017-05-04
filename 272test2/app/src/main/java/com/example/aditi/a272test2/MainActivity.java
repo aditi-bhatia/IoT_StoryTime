@@ -15,6 +15,7 @@ package com.example.aditi.a272test2;
         import android.content.Intent;
         import android.os.AsyncTask;
         import android.os.Bundle;
+        import android.provider.MediaStore;
         import android.speech.RecognizerIntent;
         import android.view.View;
         import android.webkit.WebView;
@@ -62,6 +63,40 @@ public class MainActivity extends Activity {
         Param3: Return var type
      */
 
+    private class doStuff extends AsyncTask<String, Void, String>{
+
+        @Override
+
+        protected String doInBackground(String... params) {
+            OkHttpClient client = new OkHttpClient();
+            final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+//            RequestBody requestBody = new MultipartBody.Builder()
+//                    .setType(MultipartBody.FORM)
+//                    .addFormDataPart("{\"hue\" :50000}","")
+//                    .build();
+
+            RequestBody requestBody = RequestBody.create(JSON, "{\"hue\" :10000}");
+
+
+            Request request = null;
+            try {
+                request = new Request.Builder()
+                        .url("http://192.168.43.165/api/wI1ctifgI71yETIBvGZfa7ercS5BIetYxqxfZuQL/lights/4/state")
+//                        .method("PUT", requestBody)
+                        .put(requestBody)
+                        .build();
+                Response resp = client.newCall(request).execute();
+                System.out.println(resp.toString());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+    }
     private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... params) {
@@ -94,39 +129,30 @@ public class MainActivity extends Activity {
 
         protected void onPostExecute(String response) {
             System.out.println(response);
+
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
                     new DownloadTask().execute(api_path + query + object.getString("text"));
                 }
-                RequestBody requestBody = new MultipartBody.Builder()
-                        .setType(MultipartBody.FORM)
-                        .addFormDataPart("hue", "50000")
-                        .build();
-                Request request = new Request.Builder()
-                        .url(new URL("192.168.43.165/api/wI1ctifgI71yETIBvGZfa7ercS5BIetYxqxfZuQL/lights/4/state"))
-                        .method("POST", RequestBody.create(null, new byte[0]))
-                        .post(requestBody)
-                        .build();
+                new doStuff().execute();
             } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-
-    String post(String url, String json) throws IOException {
-        RequestBody body = RequestBody.create(JSON, json);
-        Request request = new Request.Builder()
-                .url(url)
-                .post(body)
-                .build();
-        Response response = client.newCall(request).execute();
-        return response.body().string();
-    }
+//
+//    String post(String url, String json) throws IOException {
+//        RequestBody body = RequestBody.create(JSON, json);
+//        Request request = new Request.Builder()
+//                .url(url)
+//                .post(body)
+//                .build();
+//        Response response = client.newCall(request).execute();
+//        return response.body().string();
+//    }
     private class DownloadTask extends AsyncTask<String, Void, String>{
 
         @Override
@@ -154,6 +180,7 @@ public class MainActivity extends Activity {
             super.onPostExecute(gif_url);
             try {
                 back.getSettings().setJavaScriptEnabled(true);
+                back.getSettings().setDomStorageEnabled(true);
                 back.setWebViewClient(new WebViewClient());
                 back.loadUrl(gif_url);
             }catch (Exception e){
