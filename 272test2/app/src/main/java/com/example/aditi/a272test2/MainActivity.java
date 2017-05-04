@@ -1,5 +1,6 @@
 package com.example.aditi.a272test2;
 
+        import java.io.IOException;
         import java.io.InputStream;
         import java.net.URL;
         import java.util.ArrayList;
@@ -35,22 +36,31 @@ package com.example.aditi.a272test2;
         import org.json.JSONException;
         import org.json.JSONObject;
 
+        import okhttp3.MediaType;
+        import okhttp3.MultipartBody;
+        import okhttp3.OkHttpClient;
+        import okhttp3.Request;
+        import okhttp3.RequestBody;
+        import okhttp3.Response;
+
 public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
     private TextView txtOutput;
     private ImageButton btnMicrophone;
-
+    public static final MediaType JSON
+            = MediaType.parse("application/json; charset=utf-8");
     private WebView back;
     private Button btn;
     private EditText tmpIn;
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
-
+    OkHttpClient client = new OkHttpClient();
     /*
         Param1: Type of var to send to Task class
         Param2: Name of the method that shows progress
         Param3: Return var type
      */
+
     private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... params) {
@@ -83,12 +93,24 @@ public class MainActivity extends Activity {
 
         protected void onPostExecute(String response) {
             System.out.println(response);
+            String jsonBody = "{\"hue\":20000}";
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
                     new DownloadTask().execute(api_path + query + object.getString("text"));
 //                    Thread.sleep(2000);
+                    RequestBody requestBody = new MultipartBody.Builder()
+                            .setType(MultipartBody.FORM)
+                            .addFormDataPart("hue", "50000")
+                            .build();
+
+                    Request    request = new Request.Builder()
+                            .url("192.168.43.165/api/wI1ctifgI71yETIBvGZfa7ercS5BIetYxqxfZuQL/lights/4/state")
+                            .method("POST", RequestBody.create(null, new byte[0]))
+                            .post(requestBody)
+                            .build();
+
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -96,6 +118,16 @@ public class MainActivity extends Activity {
         }
     }
 
+
+    String post(String url, String json) throws IOException {
+        RequestBody body = RequestBody.create(JSON, json);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .build();
+        Response response = client.newCall(request).execute();
+        return response.body().string();
+    }
     private class DownloadTask extends AsyncTask<String, Void, String>{
 
         @Override

@@ -1,7 +1,0 @@
-#Tue May 02 13:16:44 PDT 2017
-base.0=/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1e3c3b4d55cc32b7c5c05897588a47463f08bb32
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2cc63c9ffc7d64d4e9e635e54b7ff05c3a765aef/classes.dex
-base.1=/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2cc63c9ffc7d64d4e9e635e54b7ff05c3a765aef
-file.0=/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1e3c3b4d55cc32b7c5c05897588a47463f08bb32/classes.dex

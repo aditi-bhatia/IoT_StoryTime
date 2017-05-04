@@ -1,4 +1,0 @@
-#Tue May 02 11:49:09 PDT 2017
-base.0=/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9
-renamed.0=classes.dex
-file.0=/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex
