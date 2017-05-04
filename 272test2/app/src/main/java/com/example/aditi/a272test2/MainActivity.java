@@ -4,8 +4,15 @@ package com.example.aditi.a272test2;
         import java.net.URL;
         import java.util.ArrayList;
 
+        import java.util.Arrays;
+        import java.util.HashSet;
         import java.util.List;
         import java.util.Locale;
+        import java.util.Map;
+        import java.util.Random;
+        import java.util.Set;
+        import java.util.Timer;
+        import java.util.TimerTask;
         import java.util.concurrent.ExecutionException;
 
         import android.app.Activity;
@@ -14,6 +21,7 @@ package com.example.aditi.a272test2;
         import android.os.AsyncTask;
         import android.os.Bundle;
         import android.speech.RecognizerIntent;
+        import android.util.Log;
         import android.view.View;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
@@ -30,6 +38,13 @@ package com.example.aditi.a272test2;
 
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.NaturalLanguageUnderstanding;
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.*;
+        import com.philips.lighting.hue.listener.PHLightListener;
+        import com.philips.lighting.hue.sdk.PHHueSDK;
+        import com.philips.lighting.model.PHBridge;
+        import com.philips.lighting.model.PHBridgeResource;
+        import com.philips.lighting.model.PHHueError;
+        import com.philips.lighting.model.PHLight;
+        import com.philips.lighting.model.PHLightState;
 
         import org.json.JSONArray;
         import org.json.JSONException;
@@ -46,11 +61,104 @@ public class MainActivity extends Activity {
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
 
+
+    private PHHueSDK phHueSDK;
+    private static final int MAX_HUE=65535;
+    public static final String TAG = "QuickStart";
+    private static final Set<String> TEXTS = new HashSet<String>(Arrays.asList(
+            new String[] {"BIRD","APPLE","GRASS","SKY"}
+    ));
     /*
         Param1: Type of var to send to Task class
         Param2: Name of the method that shows progress
         Param3: Return var type
      */
+
+    public void randomLights() {
+
+        // Random rand = new Random();
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+
+        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
+        final PHLightState lightState = new PHLightState();
+        for (PHLight light : allLights) {
+
+
+            new Timer().scheduleAtFixedRate(new TimerTask() {
+
+                String[] words = {" BIRD", "APPLE", "SKY","GRASS"};
+
+                @Override
+                public void run() {
+                    Random rand = new Random();
+                    int index = rand.nextInt(4);
+                    String word = words[index];
+                    if(word.contains("BIRD")){
+                        lightState.setHue(10000);
+                    }
+                    if(word.contains("APPLE")){
+                        lightState.setHue(1000);
+                    }
+                    if (word.contains("SKY"))
+                    {
+                        lightState.setHue(43255);
+                    }
+
+                    if(word.contains("GRASS"))
+                    {
+                        lightState.setHue(23454);
+                    }
+
+                    // lightState.setHue(rand.nextInt(MAX_HUE));
+                    //To validate your light-state is valid (before sending to the bridge) you can use:
+
+                }
+            }, 0, 1000);//put here time 1000 milliseconds=1 second
+
+
+            String validState = lightState.validateState();
+            bridge.updateLightState(light, lightState, listener);
+            bridge.updateLightState(light, lightState);   // If no bridge response is required then use this simpler form.
+
+        }
+    }
+    PHLightListener listener = new PHLightListener() {
+
+        @Override
+        public void onSuccess() {
+        }
+
+        @Override
+        public void onStateUpdate(Map<String, String> arg0, List<PHHueError> arg1) {
+            Log.w(TAG, "Light has updated");
+        }
+
+        @Override
+        public void onError(int arg0, String arg1) {}
+
+        @Override
+        public void onReceivingLightDetails(PHLight arg0) {}
+
+        @Override
+        public void onReceivingLights(List<PHBridgeResource> arg0) {}
+
+        @Override
+        public void onSearchComplete() {}
+    };
+
+    @Override
+    protected void onDestroy() {
+        PHBridge bridge = phHueSDK.getSelectedBridge();
+        if (bridge != null) {
+
+            if (phHueSDK.isHeartbeatEnabled(bridge)) {
+                phHueSDK.disableHeartbeat(bridge);
+            }
+
+            phHueSDK.disconnect(bridge);
+            super.onDestroy();
+        }
+    }
     private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... params) {
@@ -85,12 +193,16 @@ public class MainActivity extends Activity {
             System.out.println(response);
             try {
                 JSONArray arr = new JSONArray(response);
+                JSONObject emotion = arr.getJSONObject(0);
+                emotion = emotion.getJSONObject("emotion");
+//                lights(emotion.getString("anger"), emotion.getString("fear"), emotion.getString("joy"), emotion.getString("sadness"));
+                System.out.println("Emotion:::\n"+emotion.getString("anger"));
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
                     new DownloadTask().execute(api_path + query + object.getString("text"));
 //                    Thread.sleep(2000);
                 }
-            } catch (JSONException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -134,6 +246,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        phHueSDK = PHHueSDK.create();
         txtOutput = (TextView) findViewById(R.id.txt_output);
         btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
 

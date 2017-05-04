@@ -5,6 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.aditi.a272test2"
+        applicationId "com.philips.lighting.quickstart"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -32,6 +33,7 @@ dependencies {
     compile 'com.ibm.watson.developer_cloud:java-sdk:3.8.0'
 //    compile 'com.ibm.watson.developer_cloud:natural-language-understanding:3.8.0'
     compile group: 'org.glassfish', name: 'javax.json', version: '1.0.4'
-
+    compile files('libs/huelocalsdk.jar')
+    compile files('libs/huesdkresources.jar')
     testCompile 'junit:junit:4.12'
 }
