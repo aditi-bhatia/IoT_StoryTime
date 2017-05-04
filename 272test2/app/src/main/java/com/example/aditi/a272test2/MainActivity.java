@@ -73,8 +73,17 @@ public class MainActivity extends Activity {
         Param2: Name of the method that shows progress
         Param3: Return var type
      */
+    private class LightTask extends AsyncTask<String, Void, String> {
+        protected String doInBackground(String... params) {
+            randomLights(params[0], params[1], params[2], params[3]);
+            return null;
+        }
 
-    public void randomLights() {
+        protected void onPostExecute(String response) {
+
+        }
+    }
+    public void randomLights(final String anger, String fear, String joy, String sadness) {
 
         // Random rand = new Random();
         PHBridge bridge = phHueSDK.getSelectedBridge();
@@ -90,6 +99,7 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void run() {
+                    System.out.println(anger);
                     Random rand = new Random();
                     int index = rand.nextInt(4);
                     String word = words[index];
@@ -195,8 +205,8 @@ public class MainActivity extends Activity {
                 JSONArray arr = new JSONArray(response);
                 JSONObject emotion = arr.getJSONObject(0);
                 emotion = emotion.getJSONObject("emotion");
-//                lights(emotion.getString("anger"), emotion.getString("fear"), emotion.getString("joy"), emotion.getString("sadness"));
-                System.out.println("Emotion:::\n"+emotion.getString("anger"));
+                new LightTask().execute(emotion.getString("anger"), emotion.getString("fear"), emotion.getString("joy"), emotion.getString("sadness"));
+//                System.out.println("Emotion:::\n"+emotion.getString("anger"));
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
                     new DownloadTask().execute(api_path + query + object.getString("text"));

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/akinfemi/SJSU/app/272test2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -1396,7 +1396,7 @@
                     "endOffset": 6275
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/colors.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -1415,7 +1415,7 @@
                     "endOffset": 6322
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/colors.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1434,7 +1434,7 @@
                     "endOffset": 6373
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/colors.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2441,7 +2441,7 @@
                     "endOffset": 9924
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/colors.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/colors.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -4626,7 +4626,7 @@
                     "endOffset": 53172
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/dimens.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/dimens.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -6203,7 +6203,7 @@
                     "endOffset": 58718
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/strings.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -6222,7 +6222,7 @@
                     "endOffset": 58764
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/strings.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/strings.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -6529,7 +6529,7 @@
                     "endOffset": 61014
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/styles.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -6549,7 +6549,7 @@
                     "endOffset": 61104
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/styles.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -6569,7 +6569,7 @@
                     "endOffset": 61254
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/styles.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -6589,7 +6589,7 @@
                     "endOffset": 61334
                 },
                 "from": {
-                    "file": "/home/akinfemi/SJSU/app/272test2/app/src/main/res/values/styles.xml",
+                    "file": "/home/akinfemi/SJSU/project/272test2/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,

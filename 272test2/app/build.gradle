@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.aditi.a272test2"
-        applicationId "com.philips.lighting.quickstart"
+//        applicationId "com.philips.lighting.quickstart"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1

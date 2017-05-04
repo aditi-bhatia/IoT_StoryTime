@@ -3,156 +3,39 @@
 
     <item
         is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/language-translator/3.8.0/a961a6d7b9d42b4093a9a3fc34c542f747987de3/language-translator-3.8.0.jar"
+        jar="/home/akinfemi/SJSU/project/272test2/app/libs/huelocalsdk.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a961a6d7b9d42b4093a9a3fc34c542f747987de3">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/language-translator-3.8.0_72a587f7d915f7d975f190b9e68fe79cd7ccdf69/classes.dex" />
+        sha1="07362e192094e402e032db4407c86e36080340ab">
+        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/2/huelocalsdk_a273c3f2f8c89ce7bec8fc4dcc653c8a191f8db4/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/language-translation/3.8.0/38c6964b1a09cdbb241babb4146975de94108c2a/language-translation-3.8.0.jar"
+        jar="/home/akinfemi/SJSU/project/272test2/app/libs/huesdkresources.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="38c6964b1a09cdbb241babb4146975de94108c2a">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/language-translation-3.8.0_628329eb2c3483342f1d23bfa267ec1046b9e381/classes.dex" />
+        sha1="7183fbb86900448556ef87d3af0db01a77c27a09">
+        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/2/huesdkresources_ec7aecce394908f18a542a974ce689993eaba873/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/speech-to-text/3.8.0/238d011defe9092ac8b699cd87ec126c74d2933b/speech-to-text-3.8.0.jar"
+        jar="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="238d011defe9092ac8b699cd87ec126c74d2933b">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/speech-to-text-3.8.0_853e66a2ec0ab1c811d53a662888baa37212fe4a/classes.dex" />
+        sha1="29489f90c129c581f957221091286f540af72875">
+        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9052299249a2aa17a848d00018b1cf9497f28b29/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2cc63c9ffc7d64d4e9e635e54b7ff05c3a765aef/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/conversation/3.8.0/ab7654aaf965f8b1ced921ac853b882b714521ea/conversation-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ab7654aaf965f8b1ced921ac853b882b714521ea">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/conversation-3.8.0_434a4bc8d2da8cdddeab97e97b44f89a2f312d11/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/retrieve-and-rank/3.8.0/cbf8803911b23afda44b18465f321e42b1f53f67/retrieve-and-rank-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cbf8803911b23afda44b18465f321e42b1f53f67">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrieve-and-rank-3.8.0_619ac2418058ab393a21746fa265f41f810be8d2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/tone-analyzer/3.8.0/85b1be4a6957e34153adc257e1e52d8cbc46add0/tone-analyzer-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="85b1be4a6957e34153adc257e1e52d8cbc46add0">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/tone-analyzer-3.8.0_1b487a45e91f414903e19d8ba7699c265ce1c933/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/personality-insights/3.8.0/1b49073b386795b082fd0c82d1f2f0c8564f16bd/personality-insights-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1b49073b386795b082fd0c82d1f2f0c8564f16bd">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/personality-insights-3.8.0_ae67cc649d3ce7ed005260ead63f0dc5d42381cc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/tradeoff-analytics/3.8.0/7ec51176e8fd718bd95c95f96d5d010d22f825aa/tradeoff-analytics-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7ec51176e8fd718bd95c95f96d5d010d22f825aa">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/tradeoff-analytics-3.8.0_e6826d0ec46c80f449224ed860016e9368ae901f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/text-to-speech/3.8.0/2459852ad126bfe6943a61f6ef3e6f62958c2161/text-to-speech-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2459852ad126bfe6943a61f6ef3e6f62958c2161">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/text-to-speech-3.8.0_530cafdfd7d2557a585e819a56444e5302ec0864/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/natural-language-classifier/3.8.0/70819912811f620c59429bc5e3cd5db326b1062d/natural-language-classifier-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="70819912811f620c59429bc5e3cd5db326b1062d">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/natural-language-classifier-3.8.0_58b45e9c40618f3363ab9c583ffce76e5c48d85b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/dialog/3.8.0/b7b36e298b2c35cffe782b8176318a6a9df258ae/dialog-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b7b36e298b2c35cffe782b8176318a6a9df258ae">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/dialog-3.8.0_f7d2a81e94546b01af0cb225ae370cc4b76e683b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/document-conversion/3.8.0/d6c2a4dcf80591f9a69a6d76c0559b77b4e76b8/document-conversion-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0d6c2a4dcf80591f9a69a6d76c0559b77b4e76b8">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/document-conversion-3.8.0_102bd1b8b5fcec45a6e66cf9a9a77273ae190ef7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/visual-recognition/3.8.0/c0f8194f2b4db6df94535cd610e0990568b029b/visual-recognition-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0c0f8194f2b4db6df94535cd610e0990568b029b">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/visual-recognition-3.8.0_c083ffe4416c31c5240bda36a9e1c4e67fc71f6a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/discovery/3.8.0/3bdfaf34059fc5a7113ff7953f28c538d963af7d/discovery-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="3bdfaf34059fc5a7113ff7953f28c538d963af7d">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/discovery-3.8.0_111aeec3508b9985459b728ac65dc3d14793cef0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/.gradle/caches/modules-2/files-2.1/com.ibm.watson.developer_cloud/alchemy/3.8.0/853ade41c6751993cd7afc0d4a8887ce6fc5a387/alchemy-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="853ade41c6751993cd7afc0d4a8887ce6fc5a387">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10/alchemy-3.8.0_642245cbb4ec7b095dabfb7521ff6737a91d583b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="303c5493b019d9eb6c99bd0392577f705dc56509">
-        <dex dex="/home/akinfemi/SJSU/app/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1e3c3b4d55cc32b7c5c05897588a47463f08bb32/classes.dex" />
+        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5a5d96c60ee16473fe3bb539e7a303f5b4880bbe/classes.dex" />
     </item>
 
 </items>
