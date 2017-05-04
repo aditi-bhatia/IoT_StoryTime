@@ -2,6 +2,7 @@ package com.example.aditi.a272test2;
 
         import java.io.IOException;
         import java.io.InputStream;
+        import java.net.MalformedURLException;
         import java.net.URL;
         import java.util.ArrayList;
 
@@ -93,26 +94,24 @@ public class MainActivity extends Activity {
 
         protected void onPostExecute(String response) {
             System.out.println(response);
-            String jsonBody = "{\"hue\":20000}";
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
                     new DownloadTask().execute(api_path + query + object.getString("text"));
-//                    Thread.sleep(2000);
-                    RequestBody requestBody = new MultipartBody.Builder()
-                            .setType(MultipartBody.FORM)
-                            .addFormDataPart("hue", "50000")
-                            .build();
-
-                    Request    request = new Request.Builder()
-                            .url("192.168.43.165/api/wI1ctifgI71yETIBvGZfa7ercS5BIetYxqxfZuQL/lights/4/state")
-                            .method("POST", RequestBody.create(null, new byte[0]))
-                            .post(requestBody)
-                            .build();
-
                 }
+                RequestBody requestBody = new MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
+                        .addFormDataPart("hue", "50000")
+                        .build();
+                Request request = new Request.Builder()
+                        .url(new URL("192.168.43.165/api/wI1ctifgI71yETIBvGZfa7ercS5BIetYxqxfZuQL/lights/4/state"))
+                        .method("POST", RequestBody.create(null, new byte[0]))
+                        .post(requestBody)
+                        .build();
             } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
         }
