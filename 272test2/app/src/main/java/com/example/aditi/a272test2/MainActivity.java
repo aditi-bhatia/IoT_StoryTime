@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
     OkHttpClient client = new OkHttpClient();
+    String text;
     /*
         Param1: Type of var to send to Task class
         Param2: Name of the method that shows progress
@@ -105,7 +106,7 @@ public class MainActivity extends Activity {
                     "9af3dd26-8450-48fb-8878-c1b697a7330e",
                     "esyU4rPHDcMN"
             );
-            String toAnalyze = params[0];
+            String toAnalyze = text;//"test";//params[0];
             KeywordsOptions keywords= new KeywordsOptions.Builder()
                     .sentiment(true)
                     .emotion(true)
@@ -124,6 +125,8 @@ public class MainActivity extends Activity {
             AnalysisResults response = service
                     .analyze(parameters)
                     .execute();
+            System.out.println(response.getKeywords().toString());
+
             return response.getKeywords().toString();
         }
 
@@ -196,17 +199,21 @@ public class MainActivity extends Activity {
         btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
 
         back = (WebView) findViewById(R.id.bckgrnd);
-        btn = (Button) findViewById(R.id.tmpBtn);
+        //btn = (Button) findViewById(R.id.tmpBtn);
         tmpIn = (EditText) findViewById(R.id.tempinput);
 
         btnMicrophone.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 startSpeechToText();
+               // text = tmpIn.getText().toString();
+               //txtOutput.setText(text);
+                //if text contains "mother" replace with daughter
+                 //text = "happy";
             }
         });
 
-        btn.setOnClickListener(new View.OnClickListener() {
+       /* btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String text = tmpIn.getText().toString();
@@ -214,7 +221,7 @@ public class MainActivity extends Activity {
                 //if text contains "mother" replace with daughter
                 new WatsonUnderstandTask().execute(text);
             }
-        });
+        });*/
     }
     /**
      * Start speech to text intent. This opens up Google Speech Recognition API dialog box to listen the speech input.
@@ -248,15 +255,16 @@ public class MainActivity extends Activity {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String text = result.get(0);
-                    txtOutput.setText(text);
-//                    tmpIn.setText(text);
+                    text = result.get(0);
+                    //txtOutput.setText(text);
+                    tmpIn.setText(text);
+                    new WatsonUnderstandTask().execute(text);
 
-//                    try {
-//                        new DownloadTask().execute(api_path + query + tmpIn.getText());
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
+          /*         try {
+                        new DownloadTask().execute(api_path + query + tmpIn.getText());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }*/
                 }
                 break;
             }

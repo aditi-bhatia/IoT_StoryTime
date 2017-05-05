@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/akinfemi/SJSU/project/272test2/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/akinfemi/SJSU/project/272test2/app/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/aditi/Documents/android/272test2/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/Users/aditi/Documents/android/272test2/app/src/debug/shaders"/></dataSet></merger>

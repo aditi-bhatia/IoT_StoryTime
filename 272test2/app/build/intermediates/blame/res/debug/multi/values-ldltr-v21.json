@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+        "outputFile": "/Users/aditi/Documents/android/272test2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 163
                 },
                 "from": {
-                    "file": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "file": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

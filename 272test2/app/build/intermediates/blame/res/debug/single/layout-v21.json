@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/layout-v21/notification_action_tombstone.xml"
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/layout-v21/notification_template_icon_group.xml"
     },
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/layout-v21/notification_action.xml"
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/layout-v21/notification_template_custom_big.xml"
     },
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/layout-v21/notification_action.xml"
     }
 ]
