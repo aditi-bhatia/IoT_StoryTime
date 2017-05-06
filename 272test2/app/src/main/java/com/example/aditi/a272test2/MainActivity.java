@@ -13,16 +13,20 @@ package com.example.aditi.a272test2;
         import android.app.Activity;
         import android.content.ActivityNotFoundException;
         import android.content.Intent;
+        import android.graphics.Color;
         import android.os.AsyncTask;
         import android.os.Bundle;
         import android.provider.MediaStore;
         import android.speech.RecognizerIntent;
+        import android.support.v4.content.ContextCompat;
         import android.view.View;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.ImageButton;
+        import android.widget.LinearLayout;
+        import android.widget.RelativeLayout;
         import android.widget.TextView;
         import android.widget.Toast;
 
@@ -45,6 +49,8 @@ package com.example.aditi.a272test2;
         import okhttp3.RequestBody;
         import okhttp3.Response;
 
+        import static java.security.AccessController.getContext;
+
 public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
     private TextView txtOutput;
@@ -63,7 +69,12 @@ public class MainActivity extends Activity {
         Param2: Name of the method that shows progress
         Param3: Return var type
      */
+    public void setActivityBackgroundColor(int color) {
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(color);
+        System.out.println("PRINTING COLOR ");
 
+    }
     private class doStuff extends AsyncTask<String, Void, String>{
 
         @Override
@@ -106,7 +117,7 @@ public class MainActivity extends Activity {
                     "9af3dd26-8450-48fb-8878-c1b697a7330e",
                     "esyU4rPHDcMN"
             );
-            String toAnalyze = text;//"test";//params[0];
+            String toAnalyze =text;
             KeywordsOptions keywords= new KeywordsOptions.Builder()
                     .sentiment(true)
                     .emotion(true)
@@ -125,19 +136,29 @@ public class MainActivity extends Activity {
             AnalysisResults response = service
                     .analyze(parameters)
                     .execute();
-            System.out.println(response.getKeywords().toString());
+         //   System.out.println(response.getKeywords().toString());
+           // System.out.println(response.getEmotion().toString());
 
             return response.getKeywords().toString();
         }
 
         protected void onPostExecute(String response) {
-            System.out.println(response);
+         //   System.out.println(response);
 
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
-                    new DownloadTask().execute(api_path + query + object.getString("text"));
+                    new DownloadTask().execute(api_path + query + object.getString("text")); //emotion
+
+                    RelativeLayout tvCard = (RelativeLayout) findViewById(R.id.myid);
+                    tvCard.setBackgroundColor(android.graphics.Color.CYAN);
+                    
+/*****this changes the background color when watson finishes processing***********/
+                    LinearLayout lLayout = (LinearLayout) findViewById(R.id.linearLayout);
+                    lLayout.setBackgroundColor(Color.CYAN);
+                    WebView lLayout1 = (WebView) findViewById(R.id.bckgrnd);
+                    lLayout1.setBackgroundColor(android.graphics.Color.CYAN);
                 }
                 new doStuff().execute();
             } catch (JSONException e) {
@@ -205,6 +226,9 @@ public class MainActivity extends Activity {
         btnMicrophone.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
+               // setActivityBackgroundColor(0xFF00FF00);
+
                 startSpeechToText();
                // text = tmpIn.getText().toString();
                //txtOutput.setText(text);
@@ -227,6 +251,7 @@ public class MainActivity extends Activity {
      * Start speech to text intent. This opens up Google Speech Recognition API dialog box to listen the speech input.
      * */
     private void startSpeechToText() {
+
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
          intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -256,6 +281,7 @@ public class MainActivity extends Activity {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     text = result.get(0);
+                   // text = "mary had a lamb";
                     //txtOutput.setText(text);
                     tmpIn.setText(text);
                     new WatsonUnderstandTask().execute(text);
