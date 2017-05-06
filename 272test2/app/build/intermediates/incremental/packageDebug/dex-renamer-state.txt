@@ -1,4 +1,4 @@
-#Wed May 03 22:46:49 PDT 2017
+#Sat May 06 12:36:52 PDT 2017
 base.0=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5a5d96c60ee16473fe3bb539e7a303f5b4880bbe
 renamed.1=classes2.dex
 renamed.0=classes.dex

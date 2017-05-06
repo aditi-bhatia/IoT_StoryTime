@@ -1,33 +1,33 @@
 package com.example.aditi.a272test2;
 
+        import java.io.IOException;
         import java.io.InputStream;
+        import java.net.MalformedURLException;
         import java.net.URL;
         import java.util.ArrayList;
 
-        import java.util.Arrays;
-        import java.util.HashSet;
         import java.util.List;
         import java.util.Locale;
-        import java.util.Map;
-        import java.util.Random;
-        import java.util.Set;
-        import java.util.Timer;
-        import java.util.TimerTask;
         import java.util.concurrent.ExecutionException;
 
         import android.app.Activity;
         import android.content.ActivityNotFoundException;
         import android.content.Intent;
+        import android.graphics.Color;
         import android.os.AsyncTask;
         import android.os.Bundle;
+        import android.provider.MediaStore;
         import android.speech.RecognizerIntent;
-        import android.util.Log;
+        import android.support.v4.content.ContextCompat;
         import android.view.View;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.ImageButton;
+        import android.widget.ImageView;
+        import android.widget.LinearLayout;
+        import android.widget.RelativeLayout;
         import android.widget.TextView;
         import android.widget.Toast;
 
@@ -38,136 +38,69 @@ package com.example.aditi.a272test2;
 
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.NaturalLanguageUnderstanding;
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.*;
-        import com.philips.lighting.hue.listener.PHLightListener;
-        import com.philips.lighting.hue.sdk.PHHueSDK;
-        import com.philips.lighting.model.PHBridge;
-        import com.philips.lighting.model.PHBridgeResource;
-        import com.philips.lighting.model.PHHueError;
-        import com.philips.lighting.model.PHLight;
-        import com.philips.lighting.model.PHLightState;
 
         import org.json.JSONArray;
         import org.json.JSONException;
         import org.json.JSONObject;
 
+        import okhttp3.MediaType;
+        import okhttp3.MultipartBody;
+        import okhttp3.OkHttpClient;
+        import okhttp3.Request;
+        import okhttp3.RequestBody;
+        import okhttp3.Response;
+
+        import static java.security.AccessController.getContext;
+
 public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
     private TextView txtOutput;
     private ImageButton btnMicrophone;
-
+//    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private WebView back;
     private Button btn;
     private EditText tmpIn;
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
-
-
-    private PHHueSDK phHueSDK;
-    private static final int MAX_HUE=65535;
-    public static final String TAG = "QuickStart";
-    private static final Set<String> TEXTS = new HashSet<String>(Arrays.asList(
-            new String[] {"BIRD","APPLE","GRASS","SKY"}
-    ));
+//    OkHttpClient client = new OkHttpClient();
+    String text;
     /*
         Param1: Type of var to send to Task class
         Param2: Name of the method that shows progress
         Param3: Return var type
      */
-    private class LightTask extends AsyncTask<String, Void, String> {
+//    public void setActivityBackgroundColor(int color) {
+//        View view = this.getWindow().getDecorView();
+//        view.setBackgroundColor(color);
+//        System.out.println("PRINTING COLOR ");
+//    }
+    private class doStuff extends AsyncTask<String, Void, String>{
+
+        @Override
+
         protected String doInBackground(String... params) {
-            randomLights(params[0], params[1], params[2], params[3]);
+            OkHttpClient client = new OkHttpClient();
+            final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+
+            RequestBody requestBody = RequestBody.create(JSON, "{\"hue\" :10000}");
+
+            Request request = null;
+            try {
+                request = new Request.Builder()
+                        .url("http://192.168.43.165/api/wI1ctifgI71yETIBvGZfa7ercS5BIetYxqxfZuQL/lights/4/state")
+//                        .method("PUT", requestBody)
+                        .put(requestBody)
+                        .build();
+                Response resp = client.newCall(request).execute();
+                System.out.println(resp.toString());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             return null;
         }
 
-        protected void onPostExecute(String response) {
-
-        }
-    }
-    public void randomLights(final String anger, String fear, String joy, String sadness) {
-
-        // Random rand = new Random();
-        PHBridge bridge = phHueSDK.getSelectedBridge();
-
-        List<PHLight> allLights = bridge.getResourceCache().getAllLights();
-        final PHLightState lightState = new PHLightState();
-        for (PHLight light : allLights) {
-
-
-            new Timer().scheduleAtFixedRate(new TimerTask() {
-
-                String[] words = {" BIRD", "APPLE", "SKY","GRASS"};
-
-                @Override
-                public void run() {
-                    System.out.println(anger);
-                    Random rand = new Random();
-                    int index = rand.nextInt(4);
-                    String word = words[index];
-                    if(word.contains("BIRD")){
-                        lightState.setHue(10000);
-                    }
-                    if(word.contains("APPLE")){
-                        lightState.setHue(1000);
-                    }
-                    if (word.contains("SKY"))
-                    {
-                        lightState.setHue(43255);
-                    }
-
-                    if(word.contains("GRASS"))
-                    {
-                        lightState.setHue(23454);
-                    }
-
-                    // lightState.setHue(rand.nextInt(MAX_HUE));
-                    //To validate your light-state is valid (before sending to the bridge) you can use:
-
-                }
-            }, 0, 1000);//put here time 1000 milliseconds=1 second
-
-
-            String validState = lightState.validateState();
-            bridge.updateLightState(light, lightState, listener);
-            bridge.updateLightState(light, lightState);   // If no bridge response is required then use this simpler form.
-
-        }
-    }
-    PHLightListener listener = new PHLightListener() {
-
-        @Override
-        public void onSuccess() {
-        }
-
-        @Override
-        public void onStateUpdate(Map<String, String> arg0, List<PHHueError> arg1) {
-            Log.w(TAG, "Light has updated");
-        }
-
-        @Override
-        public void onError(int arg0, String arg1) {}
-
-        @Override
-        public void onReceivingLightDetails(PHLight arg0) {}
-
-        @Override
-        public void onReceivingLights(List<PHBridgeResource> arg0) {}
-
-        @Override
-        public void onSearchComplete() {}
-    };
-
-    @Override
-    protected void onDestroy() {
-        PHBridge bridge = phHueSDK.getSelectedBridge();
-        if (bridge != null) {
-
-            if (phHueSDK.isHeartbeatEnabled(bridge)) {
-                phHueSDK.disableHeartbeat(bridge);
-            }
-
-            phHueSDK.disconnect(bridge);
-            super.onDestroy();
-        }
     }
     private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
 
@@ -177,7 +110,7 @@ public class MainActivity extends Activity {
                     "9af3dd26-8450-48fb-8878-c1b697a7330e",
                     "esyU4rPHDcMN"
             );
-            String toAnalyze = params[0];
+            String toAnalyze =params[0];
             KeywordsOptions keywords= new KeywordsOptions.Builder()
                     .sentiment(true)
                     .emotion(true)
@@ -196,23 +129,32 @@ public class MainActivity extends Activity {
             AnalysisResults response = service
                     .analyze(parameters)
                     .execute();
+
             return response.getKeywords().toString();
         }
 
         protected void onPostExecute(String response) {
-            System.out.println(response);
+//            System.out.println(response);
             try {
                 JSONArray arr = new JSONArray(response);
-                JSONObject emotion = arr.getJSONObject(0);
-                emotion = emotion.getJSONObject("emotion");
-                new LightTask().execute(emotion.getString("anger"), emotion.getString("fear"), emotion.getString("joy"), emotion.getString("sadness"));
-//                System.out.println("Emotion:::\n"+emotion.getString("anger"));
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
-                    new DownloadTask().execute(api_path + query + object.getString("text"));
-//                    Thread.sleep(2000);
+                    new DownloadTask().execute(api_path + query + object.getString("text")); //keywords
+
+                    //this changes the background color when watson finishes processing///
+
+                    Double r = Double.parseDouble(object.getJSONObject("emotion").getString("anger").toString());
+                    Double g = Double.parseDouble(object.getJSONObject("emotion").getString("fear").toString());
+                    Double b = Double.parseDouble(object.getJSONObject("emotion").getString("joy").toString());
+                    ImageView l1 = (ImageView) findViewById(R.id.themeID);
+                    l1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+                    l1.animate().alpha(1f).setDuration(2000);
+//                    l1.setImageAlpha(0);
+
+//                    lLayout1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
                 }
-            } catch (Exception e) {
+//                new doStuff().execute();
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
@@ -245,6 +187,7 @@ public class MainActivity extends Activity {
             super.onPostExecute(gif_url);
             try {
                 back.getSettings().setJavaScriptEnabled(true);
+                back.getSettings().setDomStorageEnabled(true);
                 back.setWebViewClient(new WebViewClient());
                 back.loadUrl(gif_url);
             }catch (Exception e){
@@ -256,20 +199,26 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        phHueSDK = PHHueSDK.create();
         txtOutput = (TextView) findViewById(R.id.txt_output);
-        btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
+//        btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
 
         back = (WebView) findViewById(R.id.bckgrnd);
         btn = (Button) findViewById(R.id.tmpBtn);
         tmpIn = (EditText) findViewById(R.id.tempinput);
 
-        btnMicrophone.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                startSpeechToText();
-            }
-        });
+//        btnMicrophone.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//
+//               // setActivityBackgroundColor(0xFF00FF00);
+//
+//                startSpeechToText();
+//               // text = tmpIn.getText().toString();
+//               //txtOutput.setText(text);
+//                //if text contains "mother" replace with daughter
+//                 //text = "happy";
+//            }
+//        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -285,6 +234,7 @@ public class MainActivity extends Activity {
      * Start speech to text intent. This opens up Google Speech Recognition API dialog box to listen the speech input.
      * */
     private void startSpeechToText() {
+
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
          intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
@@ -313,15 +263,17 @@ public class MainActivity extends Activity {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    String text = result.get(0);
-                    txtOutput.setText(text);
-//                    tmpIn.setText(text);
+                    text = result.get(0);
+                   // text = "mary had a lamb";
+                    //txtOutput.setText(text);
+                    tmpIn.setText(text);
+                    new WatsonUnderstandTask().execute(text);
 
-//                    try {
-//                        new DownloadTask().execute(api_path + query + tmpIn.getText());
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                    }
+          /*         try {
+                        new DownloadTask().execute(api_path + query + tmpIn.getText());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }*/
                 }
                 break;
             }

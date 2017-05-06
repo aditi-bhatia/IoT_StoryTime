@@ -3,21 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/home/akinfemi/SJSU/project/272test2/app/libs/huelocalsdk.jar"
+        jar="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="07362e192094e402e032db4407c86e36080340ab">
-        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/2/huelocalsdk_a273c3f2f8c89ce7bec8fc4dcc653c8a191f8db4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/SJSU/project/272test2/app/libs/huesdkresources.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7183fbb86900448556ef87d3af0db01a77c27a09">
-        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/2/huesdkresources_ec7aecce394908f18a542a974ce689993eaba873/classes.dex" />
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5a5d96c60ee16473fe3bb539e7a303f5b4880bbe/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -25,17 +16,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="29489f90c129c581f957221091286f540af72875">
+        sha1="42b133c2eca36f6241b53c385a2bff1f17bf2c74">
         <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9052299249a2aa17a848d00018b1cf9497f28b29/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5a5d96c60ee16473fe3bb539e7a303f5b4880bbe/classes.dex" />
     </item>
 
 </items>

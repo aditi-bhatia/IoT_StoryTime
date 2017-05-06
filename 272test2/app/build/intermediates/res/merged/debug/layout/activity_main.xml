@@ -37,18 +37,57 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@color/colorPrimary"
-android:orientation="vertical" >
+    android:id="@+id/myid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical" >
 
     <WebView
         android:id="@+id/bckgrnd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:visibility="invisible">
+
+    </WebView>
+
+    <ImageView
+        android:id="@+id/themeID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/txt_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="normal" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
         <ImageButton
             android:id="@+id/btn_mic"
@@ -59,24 +98,10 @@ android:orientation="vertical" >
             android:src="@drawable/microphone"
             android:visibility="invisible" />
 
-    </WebView>
-
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginBottom="60dp"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:id="@+id/linearLayout">
-
         <Button
             android:id="@+id/tmpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_x="7dp"
-            android:layout_y="402dp"
             android:text="Button" />
 
         <!-- <Button
@@ -84,7 +109,7 @@ android:orientation="vertical" >
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="Button" /> -->
-</LinearLayout>
+    </LinearLayout>
 
     <EditText
         android:id="@+id/tempinput"
@@ -94,14 +119,5 @@ android:orientation="vertical" >
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/txt_output"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:textAlignment="center"
-        android:textSize="30sp" />
 
 </RelativeLayout>
