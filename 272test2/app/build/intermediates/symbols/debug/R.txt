@@ -819,7 +819,7 @@ int id navigation_header_container 0x7f0d0088
 int id never 0x7f0d0044
 int id none 0x7f0d0017
 int id normal 0x7f0d0019
-int id notification_background 0x7f0d009d
+int id notification_background 0x7f0d009c
 int id notification_main_column 0x7f0d0097
 int id notification_main_column_container 0x7f0d0096
 int id packed 0x7f0d0012
@@ -831,7 +831,7 @@ int id progress_circular 0x7f0d0006
 int id progress_horizontal 0x7f0d0007
 int id radio 0x7f0d0064
 int id right 0x7f0d0035
-int id right_icon 0x7f0d009c
+int id right_icon 0x7f0d009d
 int id right_side 0x7f0d0098
 int id screen 0x7f0d0028
 int id scroll 0x7f0d0024

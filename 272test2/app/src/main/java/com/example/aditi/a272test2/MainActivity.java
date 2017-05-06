@@ -20,6 +20,8 @@ package com.example.aditi.a272test2;
         import android.speech.RecognizerIntent;
         import android.support.v4.content.ContextCompat;
         import android.view.View;
+        import android.view.animation.AccelerateInterpolator;
+        import android.view.animation.DecelerateInterpolator;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
         import android.widget.Button;
@@ -62,7 +64,12 @@ public class MainActivity extends Activity {
     private EditText tmpIn;
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
+    private Double r;
+    private Double g;
+    private Double b;
 //    OkHttpClient client = new OkHttpClient();
+    private ImageView l1;
+
     String text;
     /*
         Param1: Type of var to send to Task class
@@ -135,6 +142,7 @@ public class MainActivity extends Activity {
 
         protected void onPostExecute(String response) {
 //            System.out.println(response);
+
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
@@ -143,15 +151,22 @@ public class MainActivity extends Activity {
 
                     //this changes the background color when watson finishes processing///
 
-                    Double r = Double.parseDouble(object.getJSONObject("emotion").getString("anger").toString());
-                    Double g = Double.parseDouble(object.getJSONObject("emotion").getString("fear").toString());
-                    Double b = Double.parseDouble(object.getJSONObject("emotion").getString("joy").toString());
-                    ImageView l1 = (ImageView) findViewById(R.id.themeID);
+                    r = Double.parseDouble(object.getJSONObject("emotion").getString("anger").toString());
+                    g = Double.parseDouble(object.getJSONObject("emotion").getString("fear").toString());
+                    b = Double.parseDouble(object.getJSONObject("emotion").getString("joy").toString());
+                    
                     l1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
-                    l1.animate().alpha(1f).setDuration(2000);
-//                    l1.setImageAlpha(0);
-
-//                    lLayout1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+                    back.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+                    l1.animate().alpha(1f).setDuration(2000).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+                        @Override
+                        public void run() {
+                            l1.animate().alpha(0f).setDuration(2000).setInterpolator(new AccelerateInterpolator()).start();
+                        }
+                    }).start();
+//                    l1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+//                    l1.animate().alpha(1f).setDuration(2000);
+//                    if (l1.getImageAlpha() == 1f)
+//                        l1.setImageAlpha(0);
                 }
 //                new doStuff().execute();
             } catch (JSONException e) {
@@ -161,7 +176,6 @@ public class MainActivity extends Activity {
     }
 
     private class DownloadTask extends AsyncTask<String, Void, String>{
-
         @Override
         protected String doInBackground(String... params){
             String gif_url ="";
@@ -200,6 +214,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtOutput = (TextView) findViewById(R.id.txt_output);
+        l1 = (ImageView) findViewById(R.id.themeID);
 //        btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
 
         back = (WebView) findViewById(R.id.bckgrnd);

@@ -80,10 +80,6 @@
         "source": "/home/akinfemi/.android/build-cache/8edb99a14286ca6db9a3760c8b8aa61782f03984/output/res/layout/design_layout_tab_text.xml"
     },
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/layout/notification_template_custom_big.xml"
-    },
-    {
         "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
         "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },

@@ -3200,7 +3200,7 @@ containing a value of this type.
         public static final int never=0x7f0d0044;
         public static final int none=0x7f0d0017;
         public static final int normal=0x7f0d0019;
-        public static final int notification_background=0x7f0d009d;
+        public static final int notification_background=0x7f0d009c;
         public static final int notification_main_column=0x7f0d0097;
         public static final int notification_main_column_container=0x7f0d0096;
         public static final int packed=0x7f0d0012;
@@ -3212,7 +3212,7 @@ containing a value of this type.
         public static final int progress_horizontal=0x7f0d0007;
         public static final int radio=0x7f0d0064;
         public static final int right=0x7f0d0035;
-        public static final int right_icon=0x7f0d009c;
+        public static final int right_icon=0x7f0d009d;
         public static final int right_side=0x7f0d0098;
         public static final int screen=0x7f0d0028;
         public static final int scroll=0x7f0d0024;

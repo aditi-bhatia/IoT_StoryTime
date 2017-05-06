@@ -3,7 +3,7 @@
     package="com.example.aditi.a272test2.test" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="16"
         android:targetSdkVersion="25" />
 
     <instrumentation
