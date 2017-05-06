@@ -1,7 +1,7 @@
-#Sat May 06 13:05:03 PDT 2017
-base.0=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5a5d96c60ee16473fe3bb539e7a303f5b4880bbe
+#Sat May 06 14:41:45 PDT 2017
+base.0=/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_09a99a10bbf078ed1083a2340722e9ad7a3d477c
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9052299249a2aa17a848d00018b1cf9497f28b29/classes.dex
-base.1=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9052299249a2aa17a848d00018b1cf9497f28b29
-file.0=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5a5d96c60ee16473fe3bb539e7a303f5b4880bbe/classes.dex
+file.1=/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8702be0141c616da44bb8321a5f9610ac9766ab3/classes.dex
+base.1=/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8702be0141c616da44bb8321a5f9610ac9766ab3
+file.0=/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_09a99a10bbf078ed1083a2340722e9ad7a3d477c/classes.dex

@@ -58,29 +58,31 @@ public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
     private TextView txtOutput;
     private ImageButton btnMicrophone;
-//    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    public static final MediaType JSON
+            = MediaType.parse("application/json; charset=utf-8");
     private WebView back;
     private Button btn;
     private EditText tmpIn;
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
+    OkHttpClient client = new OkHttpClient();
+    String text;
     private Double r;
     private Double g;
     private Double b;
-//    OkHttpClient client = new OkHttpClient();
     private ImageView l1;
 
-    String text;
     /*
         Param1: Type of var to send to Task class
         Param2: Name of the method that shows progress
         Param3: Return var type
      */
-//    public void setActivityBackgroundColor(int color) {
-//        View view = this.getWindow().getDecorView();
-//        view.setBackgroundColor(color);
-//        System.out.println("PRINTING COLOR ");
-//    }
+    public void setActivityBackgroundColor(int color) {
+        View view = this.getWindow().getDecorView();
+        view.setBackgroundColor(color);
+        System.out.println("PRINTING COLOR ");
+
+    }
     private class doStuff extends AsyncTask<String, Void, String>{
 
         @Override
@@ -88,8 +90,13 @@ public class MainActivity extends Activity {
         protected String doInBackground(String... params) {
             OkHttpClient client = new OkHttpClient();
             final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+//            RequestBody requestBody = new MultipartBody.Builder()
+//                    .setType(MultipartBody.FORM)
+//                    .addFormDataPart("{\"hue\" :50000}","")
+//                    .build();
 
             RequestBody requestBody = RequestBody.create(JSON, "{\"hue\" :10000}");
+
 
             Request request = null;
             try {
@@ -105,6 +112,7 @@ public class MainActivity extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             return null;
         }
 
@@ -117,7 +125,7 @@ public class MainActivity extends Activity {
                     "9af3dd26-8450-48fb-8878-c1b697a7330e",
                     "esyU4rPHDcMN"
             );
-            String toAnalyze =params[0];
+            String toAnalyze =text;
             KeywordsOptions keywords= new KeywordsOptions.Builder()
                     .sentiment(true)
                     .emotion(true)
@@ -136,46 +144,78 @@ public class MainActivity extends Activity {
             AnalysisResults response = service
                     .analyze(parameters)
                     .execute();
+         //   System.out.println(response.getKeywords().toString());
+           // System.out.println(response.getEmotion().toString());
 
             return response.getKeywords().toString();
         }
 
         protected void onPostExecute(String response) {
-//            System.out.println(response);
+         //   System.out.println(response);
 
             try {
                 JSONArray arr = new JSONArray(response);
                 for (int i = arr.length() - 1; i >= 0; i--){
                     JSONObject object = arr.getJSONObject(i);
-                    new DownloadTask().execute(api_path + query + object.getString("text")); //keywords
+                    new DownloadTask().execute(api_path + query + object.getString("text")); //emotion
 
-                    //this changes the background color when watson finishes processing///
+                    RelativeLayout tvCard = (RelativeLayout) findViewById(R.id.myid);
+                    tvCard.setBackgroundColor(android.graphics.Color.CYAN);
+                    
+/*****this changes the background color when watson finishes processing***********/
+                   /* LinearLayout lLayout = (LinearLayout) findViewById(R.id.linearLayout);
+                    lLayout.setBackgroundColor(Color.CYAN);
+                    WebView lLayout1 = (WebView) findViewById(R.id.bckgrnd);
+                    lLayout1.setBackgroundColor(android.graphics.Color.CYAN);*/
+
+                    /***************/
 
                     r = Double.parseDouble(object.getJSONObject("emotion").getString("anger").toString());
                     g = Double.parseDouble(object.getJSONObject("emotion").getString("fear").toString());
                     b = Double.parseDouble(object.getJSONObject("emotion").getString("joy").toString());
-                    
-                    l1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+
+             /*      l1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
                     back.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
-                    l1.animate().alpha(1f).setDuration(2000).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
+
+
+
+
+
+
+                   l1.animate().alpha(1f).setDuration(2000).setInterpolator(new DecelerateInterpolator()).withEndAction(new Runnable() {
                         @Override
                         public void run() {
                             l1.animate().alpha(0f).setDuration(2000).setInterpolator(new AccelerateInterpolator()).start();
                         }
-                    }).start();
-//                    l1.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
-//                    l1.animate().alpha(1f).setDuration(2000);
-//                    if (l1.getImageAlpha() == 1f)
-//                        l1.setImageAlpha(0);
+                    }).start();*/
+
+
+
+                    LinearLayout lLayout = (LinearLayout) findViewById(R.id.linearLayout);
+                    lLayout.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+                    WebView lLayout2 = (WebView) findViewById(R.id.bckgrnd);
+                    lLayout2.setBackgroundColor(android.graphics.Color.rgb((int)(r * 255),(int) (b * 255),(int)(g*255)));
+                    /*******/
                 }
-//                new doStuff().execute();
+                new doStuff().execute();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
     }
 
+//
+//    String post(String url, String json) throws IOException {
+//        RequestBody body = RequestBody.create(JSON, json);
+//        Request request = new Request.Builder()
+//                .url(url)
+//                .post(body)
+//                .build();
+//        Response response = client.newCall(request).execute();
+//        return response.body().string();
+//    }
     private class DownloadTask extends AsyncTask<String, Void, String>{
+
         @Override
         protected String doInBackground(String... params){
             String gif_url ="";
@@ -214,28 +254,27 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txtOutput = (TextView) findViewById(R.id.txt_output);
-        l1 = (ImageView) findViewById(R.id.themeID);
-//        btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
+        btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
 
         back = (WebView) findViewById(R.id.bckgrnd);
-        btn = (Button) findViewById(R.id.tmpBtn);
+        //btn = (Button) findViewById(R.id.tmpBtn);
         tmpIn = (EditText) findViewById(R.id.tempinput);
 
-//        btnMicrophone.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v) {
-//
-//               // setActivityBackgroundColor(0xFF00FF00);
-//
-//                startSpeechToText();
-//               // text = tmpIn.getText().toString();
-//               //txtOutput.setText(text);
-//                //if text contains "mother" replace with daughter
-//                 //text = "happy";
-//            }
-//        });
+        btnMicrophone.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
 
-        btn.setOnClickListener(new View.OnClickListener() {
+               // setActivityBackgroundColor(0xFF00FF00);
+
+                startSpeechToText();
+               // text = tmpIn.getText().toString();
+               //txtOutput.setText(text);
+                //if text contains "mother" replace with daughter
+                 //text = "happy";
+            }
+        });
+
+       /* btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String text = tmpIn.getText().toString();
@@ -243,7 +282,7 @@ public class MainActivity extends Activity {
                 //if text contains "mother" replace with daughter
                 new WatsonUnderstandTask().execute(text);
             }
-        });
+        });*/
     }
     /**
      * Start speech to text intent. This opens up Google Speech Recognition API dialog box to listen the speech input.

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/aditi/Documents/android/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/akinfemi/.android/build-cache/eec873fd0a5eccbe93b61ce08d8c910a34d0edbb/output/res/values/values.xml",
+                    "file": "/Users/aditi/.android/build-cache/dc1ed3becd51f35d62c00be3199d3012f11e0528/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

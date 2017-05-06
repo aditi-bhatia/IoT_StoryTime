@@ -47,26 +47,9 @@
         android:id="@+id/bckgrnd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/linearLayout"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:visibility="invisible">
-
-    </WebView>
-
-    <ImageView
-        android:id="@+id/themeID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:alpha="0"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/txt_output"
@@ -78,7 +61,6 @@
         android:textColor="@color/white"
         android:textSize="26sp"
         android:textStyle="normal" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,13 +78,7 @@
             android:background="@null"
             android:scaleType="centerCrop"
             android:src="@drawable/microphone"
-            android:visibility="invisible" />
-
-        <Button
-            android:id="@+id/tmpBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            />
 
         <!-- <Button
              android:id="@+id/tempButton"

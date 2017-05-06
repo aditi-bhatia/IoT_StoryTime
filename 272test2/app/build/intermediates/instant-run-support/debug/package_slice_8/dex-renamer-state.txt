@@ -1,4 +1,4 @@
-#Sat May 06 13:05:02 PDT 2017
-base.0=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8
+#Sat May 06 14:41:45 PDT 2017
+base.0=/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8
 renamed.0=classes.dex
-file.0=/home/akinfemi/SJSU/project/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex
+file.0=/Users/aditi/Documents/android/272test2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex

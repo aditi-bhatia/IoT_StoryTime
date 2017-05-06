@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "/home/akinfemi/SJSU/project/272test2/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
-        "source": "/home/akinfemi/.android/build-cache/024bd1186ea6fa4a63de5005fbb82f3d19541709/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     }
 ]
