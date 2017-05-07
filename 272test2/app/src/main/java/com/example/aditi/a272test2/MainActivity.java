@@ -177,11 +177,11 @@ public class MainActivity extends Activity {
 
                     final LinearLayout backgroundLL = (LinearLayout) findViewById(R.id.backgroundLL);
 
-                    backgroundLL.setBackgroundColor(android.graphics.Color.rgb((int)(anger * 255),(int) (fear * 255),(int)(joy*255)));
+                    backgroundLL.setBackgroundColor(android.graphics.Color.rgb((int)(anger * 255),(int) (joy * 255),(int)(fear*255)));
                 }
                 String rs = Double.toString(anger);
-                String gs = Double.toString(fear);
-                String bs = Double.toString(joy);
+                String gs = Double.toString(joy);
+                String bs = Double.toString(fear);
 
                 new doStuff().execute(rs, gs, bs);
             } catch (JSONException e) {
