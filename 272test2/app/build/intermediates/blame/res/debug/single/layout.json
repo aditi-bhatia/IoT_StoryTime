@@ -16,6 +16,10 @@
         "source": "/Users/sam.chakrabarty/.android/build-cache/5f92f0211a4b1a29a828104105514b518de7df11/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
+        "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/layout/splash.xml",
+        "source": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/res/layout/splash.xml"
+    },
+    {
         "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/Users/sam.chakrabarty/.android/build-cache/5f92f0211a4b1a29a828104105514b518de7df11/output/res/layout/abc_screen_simple.xml"
     },
@@ -126,10 +130,6 @@
     {
         "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/Users/sam.chakrabarty/.android/build-cache/5f92f0211a4b1a29a828104105514b518de7df11/output/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
-        "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/layout/test.xml",
-        "source": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/res/layout/test.xml"
     },
     {
         "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",

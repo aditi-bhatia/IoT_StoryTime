@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml
@@ -22,7 +22,7 @@ ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/sr
 	android:name
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:8:5-27:19
+ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:8:5-32:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/sam.chakrabarty/.android/build-cache/f61f76b3928162ac6b1e492885f52ac66f69660a/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] /Users/sam.chakrabarty/.android/build-cache/508e2cf12b4ff8106e29acef85b04dafcb023825/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] /Users/sam.chakrabarty/.android/build-cache/07816a6e1ff9b847414ff90aadab7494fad8b445/output/AndroidManifest.xml:26:5-20
@@ -41,21 +41,21 @@ MERGED from [com.android.support:support-compat:25.3.1] /Users/sam.chakrabarty/.
 	android:supportsRtl
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:13:9-35
 	android:roundIcon
-		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:10:9-38
 	android:theme
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:14:9-40
-activity#com.example.aditi.a272test2.MainActivity
+activity#com.example.aditi.a272test2.Splash
 ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:17:9-26:20
 	android:label
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:19:13-45
 	android:theme
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:20:13-56
 	android:name
-		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:18:9-64
+		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:18:9-58
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
@@ -66,6 +66,12 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:24:17-77
 	android:name
 		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:24:27-74
+activity#com.example.aditi.a272test2.MainActivity
+ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:28:9-31:20
+	android:label
+		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:30:13-45
+	android:name
+		ADDED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml:29:13-68
 uses-sdk
 INJECTED from /Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/sam.chakrabarty/.android/build-cache/f61f76b3928162ac6b1e492885f52ac66f69660a/output/AndroidManifest.xml:5:5-7:41
