@@ -55,6 +55,7 @@ package com.example.aditi.a272test2;
         import okhttp3.RequestBody;
         import okhttp3.Response;
 
+        import static java.lang.Math.pow;
         import static java.security.AccessController.getContext;
         import android.view.animation.AccelerateInterpolator;
         import android.view.animation.DecelerateInterpolator;
@@ -84,12 +85,29 @@ public class MainActivity extends Activity {
         protected String doInBackground(String... params) {
             OkHttpClient client = new OkHttpClient();
             final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-//            RequestBody requestBody = new MultipartBody.Builder()
-//                    .setType(MultipartBody.FORM)
-//                    .addFormDataPart("{\"hue\" :50000}","")
-//                    .build();
 
-            RequestBody requestBody = RequestBody.create(JSON, "{\"hue\" :10000}");
+            Double r = Double.parseDouble(params[0])*255;
+            Double g = Double.parseDouble(params[1])*255;
+            Double b = Double.parseDouble(params[2])*255;
+
+            r = (r > 0.04045d) ? pow((r + 0.055d) / (1.0d + 0.055d), 2.4d) : (r / 12.92d);
+            g = (g > 0.04045d) ? pow((g + 0.055d) / (1.0d + 0.055d), 2.4d) : (g / 12.92d);
+            b = (b > 0.04045d) ? pow((b + 0.055d) / (1.0d + 0.055d), 2.4d) : (b / 12.92d);
+
+            double X = r * 0.664511f + r * 0.154324f + r * 0.162028f;
+            double Y = g * 0.283881f + g * 0.668433f + g * 0.047685f;
+            double Z = b * 0.000088f + b * 0.072310f + b * 0.986039f;
+
+            double x = X / (X + Y + Z);
+            double y = Y / (X + Y + Z);
+
+            String xs = Double.toString(x);
+            String ys = Double.toString(y);
+
+            System.out.println(x);
+            System.out.println(y);
+
+            RequestBody requestBody = RequestBody.create(JSON, "{\"xy\" :["+xs+","+ys+"]}");
             Request request = null;
             try {
                 request = new Request.Builder()
@@ -160,11 +178,12 @@ public class MainActivity extends Activity {
                     final LinearLayout backgroundLL = (LinearLayout) findViewById(R.id.backgroundLL);
 
                     backgroundLL.setBackgroundColor(android.graphics.Color.rgb((int)(anger * 255),(int) (fear * 255),(int)(joy*255)));
-
-
-
                 }
-                new doStuff().execute();
+                String rs = Double.toString(anger);
+                String gs = Double.toString(fear);
+                String bs = Double.toString(joy);
+
+                new doStuff().execute(rs, gs, bs);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
