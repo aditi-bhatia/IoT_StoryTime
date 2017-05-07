@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
-        "source": "/Users/aditi/Documents/android/272test2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
+        "source": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/aditi/Documents/android/272test2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
-        "source": "/Users/aditi/Documents/android/272test2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
 ]

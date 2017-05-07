@@ -1,75 +1,51 @@
-<!-- <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    tools:context="com.example.aditi.a272test2.MainActivity">
+    android:layout_width="match_parent"
+    android:id="@+id/backgroundLL"
+    android:orientation="vertical"
+    android:background="@color/teal">
 
-    <android.support.design.widget.AppBarLayout
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-</android.support.design.widget.CoordinatorLayout> -->
+        android:layout_weight="0.5"
+        android:gravity="center">
 
 
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/myid"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical" >
-
-    <WebView
-        android:id="@+id/bckgrnd"
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/my_image_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        fresco:placeholderImage="@drawable/loader" />
 
-    <TextView
-        android:id="@+id/txt_output"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:textColor="@color/white"
-        android:textSize="26sp"
-        android:textStyle="normal" />
+    </LinearLayout>
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:gravity="center"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
         android:orientation="vertical"
-        android:id="@+id/linearLayout">
+        android:gravity="center"
+        android:layout_weight="0.5">
+
+        <EditText
+            android:id="@+id/tempinput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:layout_margin="20dp"/>
 
         <ImageButton
             android:id="@+id/btn_mic"
@@ -77,23 +53,8 @@
             android:layout_height="80dp"
             android:background="@null"
             android:scaleType="centerCrop"
-            android:src="@drawable/microphone"
-            />
+            android:src="@drawable/microphone" />
 
-        <!-- <Button
-             android:id="@+id/tempButton"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:text="Button" /> -->
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/tempinput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-</RelativeLayout>
+    </LinearLayout>

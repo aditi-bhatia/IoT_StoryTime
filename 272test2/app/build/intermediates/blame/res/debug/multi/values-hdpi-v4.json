@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/aditi/Documents/android/272test2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+        "outputFile": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 327
                 },
                 "from": {
-                    "file": "/Users/aditi/.android/build-cache/2f0f7bee550cad7320ab455a9a4dac893c1da10d/output/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "file": "/Users/sam.chakrabarty/.android/build-cache/5f92f0211a4b1a29a828104105514b518de7df11/output/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

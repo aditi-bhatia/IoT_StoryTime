@@ -8,17 +8,20 @@ package com.example.aditi.a272test2;
 
         import java.util.List;
         import java.util.Locale;
+        import java.util.Vector;
         import java.util.concurrent.ExecutionException;
 
         import android.app.Activity;
         import android.content.ActivityNotFoundException;
         import android.content.Intent;
         import android.graphics.Color;
+        import android.net.Uri;
         import android.os.AsyncTask;
         import android.os.Bundle;
         import android.provider.MediaStore;
         import android.speech.RecognizerIntent;
         import android.support.v4.content.ContextCompat;
+        import android.util.Log;
         import android.view.View;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
@@ -35,6 +38,9 @@ package com.example.aditi.a272test2;
         import javax.json.JsonObject;
         import javax.json.JsonReader;
 
+        import com.facebook.drawee.backends.pipeline.Fresco;
+        import com.facebook.drawee.interfaces.DraweeController;
+        import com.facebook.drawee.view.SimpleDraweeView;
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.NaturalLanguageUnderstanding;
         import com.ibm.watson.developer_cloud.natural_language_understanding.v1.model.*;
 
@@ -50,6 +56,8 @@ package com.example.aditi.a272test2;
         import okhttp3.Response;
 
         import static java.security.AccessController.getContext;
+        import android.view.animation.AccelerateInterpolator;
+        import android.view.animation.DecelerateInterpolator;
 
 public class MainActivity extends Activity {
     private final int SPEECH_RECOGNITION_CODE = 1;
@@ -62,23 +70,17 @@ public class MainActivity extends Activity {
     private EditText tmpIn;
     private String api_path = "http://api.giphy.com/v1/gifs/search?&api_key=dc6zaTOxFJmzC&limit=1&rating=y";
     private String query = "&q=";
+    private SimpleDraweeView draweeView;
+
+    private double anger, fear, joy;
+
     OkHttpClient client = new OkHttpClient();
     String text;
-    /*
-        Param1: Type of var to send to Task class
-        Param2: Name of the method that shows progress
-        Param3: Return var type
-     */
-    public void setActivityBackgroundColor(int color) {
-        View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(color);
-        System.out.println("PRINTING COLOR ");
 
-    }
+
     private class doStuff extends AsyncTask<String, Void, String>{
 
         @Override
-
         protected String doInBackground(String... params) {
             OkHttpClient client = new OkHttpClient();
             final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
@@ -88,8 +90,6 @@ public class MainActivity extends Activity {
 //                    .build();
 
             RequestBody requestBody = RequestBody.create(JSON, "{\"hue\" :10000}");
-
-
             Request request = null;
             try {
                 request = new Request.Builder()
@@ -104,10 +104,8 @@ public class MainActivity extends Activity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
-
     }
     private class WatsonUnderstandTask extends AsyncTask<String, Void, String> {
 
@@ -139,26 +137,32 @@ public class MainActivity extends Activity {
          //   System.out.println(response.getKeywords().toString());
            // System.out.println(response.getEmotion().toString());
 
+
             return response.getKeywords().toString();
         }
 
         protected void onPostExecute(String response) {
          //   System.out.println(response);
-
+            Vector<String> gifs = new Vector<String>();
             try {
                 JSONArray arr = new JSONArray(response);
-                for (int i = arr.length() - 1; i >= 0; i--){
+                for (int i = 0; i < arr.length(); i++){
                     JSONObject object = arr.getJSONObject(i);
                     new DownloadTask().execute(api_path + query + object.getString("text")); //emotion
+                    gifs.add(api_path + query + object.getString("text"));
 
-                    RelativeLayout tvCard = (RelativeLayout) findViewById(R.id.myid);
-                    tvCard.setBackgroundColor(android.graphics.Color.CYAN);
-                    
-/*****this changes the background color when watson finishes processing***********/
-                    LinearLayout lLayout = (LinearLayout) findViewById(R.id.linearLayout);
-                    lLayout.setBackgroundColor(Color.CYAN);
-                    WebView lLayout1 = (WebView) findViewById(R.id.bckgrnd);
-                    lLayout1.setBackgroundColor(android.graphics.Color.CYAN);
+                    String url = api_path + query + object.getString("text");
+
+                    anger = Double.parseDouble(object.getJSONObject("emotion").getString("anger").toString());
+                    fear = Double.parseDouble(object.getJSONObject("emotion").getString("fear").toString());
+                    joy = Double.parseDouble(object.getJSONObject("emotion").getString("joy").toString());
+
+                    final LinearLayout backgroundLL = (LinearLayout) findViewById(R.id.backgroundLL);
+
+                    backgroundLL.setBackgroundColor(android.graphics.Color.rgb((int)(anger * 255),(int) (fear * 255),(int)(joy*255)));
+
+
+
                 }
                 new doStuff().execute();
             } catch (JSONException e) {
@@ -167,16 +171,7 @@ public class MainActivity extends Activity {
         }
     }
 
-//
-//    String post(String url, String json) throws IOException {
-//        RequestBody body = RequestBody.create(JSON, json);
-//        Request request = new Request.Builder()
-//                .url(url)
-//                .post(body)
-//                .build();
-//        Response response = client.newCall(request).execute();
-//        return response.body().string();
-//    }
+
     private class DownloadTask extends AsyncTask<String, Void, String>{
 
         @Override
@@ -191,7 +186,7 @@ public class MainActivity extends Activity {
                 JsonObject obj = rdr.readObject();
                 JsonArray results = obj.getJsonArray("data");
                 JsonObject result = results.getValuesAs(JsonObject.class).get(0);
-                gif_url = result.getJsonObject("images").getJsonObject("original").getString("mp4");
+                gif_url = result.getJsonObject("images").getJsonObject("original").getString("url");
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -203,10 +198,15 @@ public class MainActivity extends Activity {
         protected void onPostExecute(String gif_url){
             super.onPostExecute(gif_url);
             try {
-                back.getSettings().setJavaScriptEnabled(true);
-                back.getSettings().setDomStorageEnabled(true);
-                back.setWebViewClient(new WebViewClient());
-                back.loadUrl(gif_url);
+                Log.d("url", gif_url);
+                if(gif_url.length()!=0){
+                    Uri uri = Uri.parse(gif_url);
+                    DraweeController controller = Fresco.newDraweeControllerBuilder()
+                            .setUri(uri)
+                            .setAutoPlayAnimations(true)
+                            .build();
+                    draweeView.setController(controller);
+                }
             }catch (Exception e){
                 e.printStackTrace();
             }
@@ -214,38 +214,34 @@ public class MainActivity extends Activity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("Starting", "App has started!");
         super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
+
         setContentView(R.layout.activity_main);
-        txtOutput = (TextView) findViewById(R.id.txt_output);
+        draweeView = (SimpleDraweeView) findViewById(R.id.my_image_view);
+        DraweeController controller = Fresco.newDraweeControllerBuilder()
+                .setAutoPlayAnimations(true)
+                .build();
+        draweeView.setController(controller);
+
+
+
+        //txtOutput = (TextView) findViewById(R.id.txt_output);
         btnMicrophone = (ImageButton) findViewById(R.id.btn_mic);
 
-        back = (WebView) findViewById(R.id.bckgrnd);
+        //back = (WebView) findViewById(R.id.bckgrnd);
         //btn = (Button) findViewById(R.id.tmpBtn);
         tmpIn = (EditText) findViewById(R.id.tempinput);
 
         btnMicrophone.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-               // setActivityBackgroundColor(0xFF00FF00);
-
                 startSpeechToText();
-               // text = tmpIn.getText().toString();
-               //txtOutput.setText(text);
-                //if text contains "mother" replace with daughter
-                 //text = "happy";
             }
         });
 
-       /* btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = tmpIn.getText().toString();
-                txtOutput.setText(text);
-                //if text contains "mother" replace with daughter
-                new WatsonUnderstandTask().execute(text);
-            }
-        });*/
+
     }
     /**
      * Start speech to text intent. This opens up Google Speech Recognition API dialog box to listen the speech input.

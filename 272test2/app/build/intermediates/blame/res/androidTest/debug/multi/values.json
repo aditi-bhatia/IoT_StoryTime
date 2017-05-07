@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/aditi/Documents/android/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "/Users/sam.chakrabarty/Documents/school/IoT_StoryTime/272test2/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/aditi/.android/build-cache/dc1ed3becd51f35d62c00be3199d3012f11e0528/output/res/values/values.xml",
+                    "file": "/Users/sam.chakrabarty/.android/build-cache/822580cbc6f056a279b6ca0a14830567cd56143a/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
